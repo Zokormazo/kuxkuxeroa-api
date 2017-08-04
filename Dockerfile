@@ -3,17 +3,18 @@ FROM node:6-alpine
 # grab su-exec for easy step-down from root
 RUN apk add --no-cache 'su-exec>=0.2'
 
-COPY . /api
+COPY package.json /api/
 WORKDIR /api
 
 RUN set -ex; \
-	chown node:node "/api"; \
+	chown -R node:node "/api"; \
   apk add --no-cache --virtual .deps git; \
   npm install; \
   npm cache clean; \
   apk del .deps
 
-ENTRYPOINT ["/api/docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 
-EXPOSE 2368
+EXPOSE 3000
 CMD ["node", "index.js"]

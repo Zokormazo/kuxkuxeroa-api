@@ -1,0 +1,21 @@
+{
+  "name": "kuxkuxeroa-api",
+  "version": "0.0.1",
+  "description": "API backend for Kuxkuxeroa",
+  "repository": {
+    "type": "git",
+    "url": "https://git@github.com/Zokormazo/kuxkuxeroa-api.git"
+  },
+  "main": "index.js",
+  "author": "Julen Landa Alustiza <julen@zokormazo.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zokormazo/kuxkuxeroa-api/issues"
+  },
+  "dependencies": {
+    "bunyan-winston-adapter": "^0.2.0",
+    "mongoose": "^4.11.5",
+    "restify": "^5.0.1",
+    "winston": "^2.3.1"
+  }
+}
